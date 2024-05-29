@@ -1,51 +1,74 @@
-Primera parte
-Los enanos de Nidavellir nos han pedido modelar los guanteletes que ellos producen en su herrería. Un guantelete está hecho de un material (“hierro”, “uru”, etc.) y sabemos las gemas que posee. También se sabe de los personajes que tienen una edad, una energía, una serie de habilidades (como por ejemplo “usar espada”, “controlar la mente”, etc), su nombre y en qué planeta viven. Los fabricantes determinaron que cuando un guantelete está completo -es decir, tiene las 6 gemas posibles- y su material es “uru”, se tiene la posibilidad de chasquear un universo que contiene a todos sus habitantes y reducir a la mitad la cantidad de dichos personajes. Por ejemplo si tenemos un universo en el cual existen ironMan, drStrange, groot y wolverine, solo quedan los dos primeros que son ironMan y drStrange. Si además de los 4 personajes estuviera viudaNegra, quedarían también ironMan y drStrange porque se considera la división entera.
+Las leyes
+El Congreso de la Nación sanciona diferentes leyes cada año, algunas más extensas o
+importantes que otras, pero en particular más que el detalle de su articulado nos interesa
+conocer cierta información clave, como ser el tema que trata, el presupuesto que requiere su
+implementación y cuáles son los partidos políticos, grupos de poder u otros sectores que la
+impulsaron o la apoyan.
+Por ejemplo:
+● La ley de uso medicinal del cannabis implica un presupuesto de 5 unidades, fue
+apoyada por el partido cambio de todos y el sector financiero.
+● La ley de educación superior requiere un presupuesto de 30 unidades y fue apoyada
+por docentes universitarios y el partido de centro federal
+● A la ley de profesionalización del tenista de mesa, con un presupuesto de 1 unidad la
+apoya el partido de centro federal, la liga de deportistas autónomos y el club paleta
+veloz.
+● También hay una ley sobre tenis, apoyada por la liga de deportistas autónomos, con
+un presupuesto de 2.
+1. Averiguar si dos leyes son compatibles, que se da cuando tienen al menos un sector
+en común que la apoya y el tema de una de las leyes esté incluido en el otro. Por
+ejemplo, son compatibles la ley de “profesionalización del tenista de mesa” y la de
+“tenis”.
 
-Punto 1: (2 puntos) Modelar Personaje, Guantelete y Universo como tipos de dato e implementar el chasquido de un universo.
+Constitucionalidad de las leyes
+La legislación vigente establece que son 5 los jueces que integran la Corte Suprema, pero
+previendo posibles cambios que puedan suceder contemplaremos la posibilidad de que la
 
+cantidad de integrantes sea diferente. Es tarea de la corte establecer si una determinada ley
+es constitucional o no. Para ello, cada juez vota de acuerdo a sus principios, experiencia,
+intereses o como le dé la gana, y si resultan mayoritarios los votos negativos, la ley se
+declara inconstitucional. En estos casos, ningún juez de la corte puede abstenerse o votar
+en blanco.
 
-Punto 2: (3 puntos) Resolver utilizando únicamente orden superior.
-Saber si un universo es apto para péndex, que ocurre si alguno de los personajes que lo integran tienen menos de 45 años.
-Saber la energía total de un universo que es la sumatoria de todas las energías de sus integrantes que tienen más de una habilidad.
+De los jueces no nos interesa saber su información personal, su patrimonio ni su
+autopercepción, sino simplemente como votan.
+Algunos de ellos son:
+● Uno de los jueces se basa en la opinión pública: si el tema de la ley está en agenda,
+seguro que la declara constitucional. (Se conoce el conjunto de temas en agenda,
+que es único para todos)
+● Otro de los jueces, cuando se entera que la ley fue apoyada por el sector financiero,
+es imposible que la declare inconstitucional.
+● Hay un juez muy preocupado por las arcas del estado que declara inconstitucionales
+las leyes que requieren un presupuesto de más de 10 unidades. Existe otro juez con
+mentalidad similar pero un poco más tolerante que las declara inconstitucional recién
+si superan las 20 unidades de presupuesto.
+● Y el último de los jueces actuales decide declarar constitucional a toda ley que haya
+sido apoyada por el partido conservador
 
+1) Hacer que una Corte Suprema determine si se considera constitucional o no una ley.
+2) Agregar nuevos jueces que puedan integran la corte suprema:
+a) Uno que siempre vote afirmativamente
+b) Un juez inventado, con lógica totalmente diferente (no trivial).
+c) Otro juez que también tenga preocupación presupuestaria pero con otro
+importe.
 
-Segunda parte
-A su vez, aunque el guantelete no se encuentre completo con las 6 gemas, el poseedor puede utilizar el poder del mismo contra un enemigo, es decir que puede aplicar el poder de cada gema sobre el enemigo. Las gemas del infinito fueron originalmente parte de la entidad primordial llamada Némesis, un ser todopoderoso del universo anterior quién prefirió terminar su existencia en lugar de vivir como la única conciencia en el universo. Al morir, dio paso al universo actual, y el núcleo de su ser reencarnó en las seis gemas: 
+3) Hacer una función que dada una serie de leyes, averigue cuáles que no serían
+consideradas constitucionales con la actual conformación de la corte (sí lo serían en
+caso de agregarle un conjunto de nuevos integrantes ??).
 
-- La mente que tiene la habilidad de debilitar la energía de un usuario en un valor dado.
-  
-- El alma puede controlar el alma de nuestro oponente permitiéndole eliminar una habilidad en particular si es que la posee. Además le quita 10 puntos de energía. 
-  
-- El espacio que permite transportar al rival al planeta x (el que usted decida) y resta 20 puntos de energía.
-  
-- El poder deja sin energía al rival y si tiene 2 habilidades o menos se las quita (en caso contrario no le saca ninguna habilidad).
-  
-- El tiempo que reduce a la mitad la edad de su oponente pero como no está permitido pelear con menores, no puede dejar la edad del oponente con menos de 18 años. Considerar la mitad entera, por ej: si el oponente tiene 50 años, le quedarán 25. Si tiene 45, le quedarán 22 (por división entera). Si tiene 30 años, le deben quedar 18 en lugar de 15. También resta 50 puntos de energía.
-  
-- La gema loca que permite manipular el poder de una gema y la ejecuta 2 veces contra un rival.
+Cuestión de principios
+A veces pasa que a los jueces les pasan cosas, se sospecha de su independencia o de
+pronto cambian el sentido de su voto.
+1. Hacer la función borocotizar, que dada una conformación de la Corte Suprema pasen
+a votar de forma contraria a lo que votaban antes y de esta manera, para cualquier
+ley, se cumpla que:
+constitucionalidad corteSuprema unaLey != constitucionalidad
+(borocotizar corteSuprema) unaLey
+2. Determinar si un juez curiosamente coincide en su posición con un sector social, que
+se da cuando de un conjunto dado de leyes actualmente en tratamiento, sólo vota las
+que son apoyadas por dicho sector.
+Tests
+Escribir tests para al menos 3 casos felices de los puntos anteriores
+Para pensar
 
-Punto 3: (3 puntos) Implementar las gemas del infinito, evitando lógica duplicada. 
-
-Punto 4: (1 punto) Dar un ejemplo de un guantelete de goma con las gemas tiempo, alma que quita la habilidad de “usar Mjolnir” y la gema loca que manipula el poder del alma tratando de eliminar la “programación en Haskell”.
-
-
-Punto 5: (2 puntos). No se puede utilizar recursividad. Generar la función utilizar  que dado una lista de gemas y un enemigo ejecuta el poder de cada una de las gemas que lo componen contra el personaje dado. Indicar cómo se produce el “efecto de lado” sobre la víctima.
-
-
-Punto 6: (2 puntos). Resolver utilizando recursividad. Definir la función gemaMasPoderosa que dado un guantelete y una persona obtiene la gema del infinito que produce la pérdida más grande de energía sobre la víctima. 
-
-
-Punto 7: (1 punto) Dada la función generadora de gemas y un guantelete de locos:
-infinitasGemas :: Gema -> [Gema]
-infinitasGemas gema = gema:(infinitasGemas gema)
-
-guanteleteDeLocos :: Guantelete
-guanteleteDeLocos = Guantelete "vesconite" (infinitasGemas tiempo)
-
-Y la función 
-usoLasTresPrimerasGemas :: Guantelete -> Personaje -> Personaje
-usoLasTresPrimerasGemas guantelete = (utilizar . take 3. gemas) guantelete
-
-Justifique si se puede ejecutar, relacionándolo con conceptos vistos en la cursada:
-gemaMasPoderosa punisher guanteleteDeLocos
-usoLasTresPrimerasGemas guanteleteDeLocos punisher
+Si hubiera una ley apoyada por infinitos sectores ¿puede ser declarada constitucional?
+¿cuáles jueces podrián votarla y cuáles no? Justificar
